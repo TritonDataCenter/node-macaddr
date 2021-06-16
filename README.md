@@ -37,7 +37,8 @@ object allows for controlling the output, and takes the following fields:
   single character with a `0`.
 - `separator` (default: `':'`), separator between octets.
 - `octetFormatter` (default: (none)), a function that takes the integer 
-  octet as the argument and returns the formatted octet. Ignores `zeroPad` when set.
+  octet as the argument and returns the formatted octet. If `zeroPad` is 
+  true, pad up to two characters.
 
 ### `MAC#toLong()`
 

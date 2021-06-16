@@ -80,10 +80,11 @@ test('output with custom separator', function (t) {
     t.end();
 });
 
-test('output with custom octet formatter', function (t) {
+test('output with custom octet formatter and padding disabled', function (t) {
     var strs = [
-        [ '0a-0b-0c-0d-0e-0f', 'd10:d11:d12:d13:d14:d15' ],
-        [ '00-01-ef-9d-ae-f0', 'd0:d1:d239:d157:d174:d240' ]
+        [ '0a-0b-0c-0d-0e-0f', 'A:B:C:D:E:F' ],
+        [ '00-01-ef-9d-ae-f0', '0:1:EF:9D:AE:F0' ],
+        [ 'bc-10-ef-9d-ae-f0', 'BC:10:EF:9D:AE:F0' ]
     ];
 
     t.plan(strs.length);
@@ -91,9 +92,32 @@ test('output with custom octet formatter', function (t) {
     strs.forEach(function (str) {
         var addr = macaddr.parse(str[0]);
         function formatter(octet) {
-            return 'd' + octet;
+            return octet.toString(16).toUpperCase();
         }
-        t.equal(addr.toString({ octetFormatter: formatter }), str[1],
+        t.equal(addr.toString( { octetFormatter: formatter, zeroPad: false}),
+          str[1],
+          str[0] + ' (with custom octet formatter and zeroPad=false)');
+    });
+
+    t.end();
+});
+
+test('output with custom octet formatter and padding enabled', function (t) {
+    var strs = [
+        [ 'a-b-c-d-e-f', '0A:0B:0C:0D:0E:0F' ],
+        [ '0-1-ef-9d-ae-f0', '00:01:EF:9D:AE:F0' ],
+        [ 'bc-10-ef-9d-ae-f0', 'BC:10:EF:9D:AE:F0' ]
+    ];
+
+    t.plan(strs.length);
+
+    strs.forEach(function (str) {
+        var addr = macaddr.parse(str[0]);
+        function formatter(octet) {
+            return octet.toString(16).toUpperCase();
+        }
+        t.equal(addr.toString({ octetFormatter: formatter, zeroPad: true }),
+          str[1],
             str[0] + ' (with custom octet formatter)');
     });
 
