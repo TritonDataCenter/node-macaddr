@@ -1,6 +1,6 @@
 {
   "name": "macaddr",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "MAC address parsing and manipulation",
   "keywords": [ "mac", "macaddr" ],
   "repository": {
