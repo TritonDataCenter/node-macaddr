@@ -27,9 +27,9 @@ test('output long', function (t) {
 
 test('output with leading zeros', function (t) {
     var strs = [
-        ['a-b-c-d-e-f', '0a:0b:0c:0d:0e:0f'],
-        ['0-1-ef-9d-ae-f0', '00:01:ef:9d:ae:f0'],
-        ['bc-10-ef-9d-ae-f0', 'bc:10:ef:9d:ae:f0']
+        [ 'a-b-c-d-e-f', '0a:0b:0c:0d:0e:0f' ],
+        [ '0-1-ef-9d-ae-f0', '00:01:ef:9d:ae:f0' ],
+        [ 'bc-10-ef-9d-ae-f0', 'bc:10:ef:9d:ae:f0' ]
     ];
 
     t.plan(strs.length * 2);
@@ -46,9 +46,9 @@ test('output with leading zeros', function (t) {
 
 test('output without leading zeros', function (t) {
     var strs = [
-        ['0a-0b-0c-0d-0e-0f', 'a:b:c:d:e:f'],
-        ['00-01-ef-9d-ae-f0', '0:1:ef:9d:ae:f0'],
-        ['bc-10-ef-9d-ae-f0', 'bc:10:ef:9d:ae:f0']
+        [ '0a-0b-0c-0d-0e-0f', 'a:b:c:d:e:f' ],
+        [ '00-01-ef-9d-ae-f0', '0:1:ef:9d:ae:f0' ],
+        [ 'bc-10-ef-9d-ae-f0', 'bc:10:ef:9d:ae:f0' ]
     ];
 
     t.plan(strs.length);
@@ -64,9 +64,9 @@ test('output without leading zeros', function (t) {
 
 test('output with custom separator', function (t) {
     var strs = [
-        ['0a-0b-0c-0d-0e-0f', '0a|0b|0c|0d|0e|0f'],
-        ['00-01-ef-9d-ae-f0', '00|01|ef|9d|ae|f0'],
-        ['bc-10-ef-9d-ae-f0', 'bc|10|ef|9d|ae|f0']
+        [ '0a-0b-0c-0d-0e-0f', '0a|0b|0c|0d|0e|0f' ],
+        [ '00-01-ef-9d-ae-f0', '00|01|ef|9d|ae|f0' ],
+        [ 'bc-10-ef-9d-ae-f0', 'bc|10|ef|9d|ae|f0' ]
     ];
 
     t.plan(strs.length);
@@ -82,9 +82,9 @@ test('output with custom separator', function (t) {
 
 test('output with custom octet formatter and padding disabled', function (t) {
     var strs = [
-        ['0a-0b-0c-0d-0e-0f', 'A:B:C:D:E:F'],
-        ['00-01-ef-9d-ae-f0', '0:1:EF:9D:AE:F0'],
-        ['bc-10-ef-9d-ae-f0', 'BC:10:EF:9D:AE:F0']
+        [ '0a-0b-0c-0d-0e-0f', 'A:B:C:D:E:F' ],
+        [ '00-01-ef-9d-ae-f0', '0:1:EF:9D:AE:F0' ],
+        [ 'bc-10-ef-9d-ae-f0', 'BC:10:EF:9D:AE:F0' ]
     ];
 
     t.plan(strs.length);
@@ -106,9 +106,9 @@ test('output with custom octet formatter and padding disabled', function (t) {
 
 test('output with custom octet formatter and padding enabled', function (t) {
     var strs = [
-        ['a-b-c-d-e-f', '0A:0B:0C:0D:0E:0F'],
-        ['0-1-ef-9d-ae-f0', '00:01:EF:9D:AE:F0'],
-        ['bc-10-ef-9d-ae-f0', 'BC:10:EF:9D:AE:F0']
+        [ 'a-b-c-d-e-f', '0A:0B:0C:0D:0E:0F' ],
+        [ '0-1-ef-9d-ae-f0', '00:01:EF:9D:AE:F0' ],
+        [ 'bc-10-ef-9d-ae-f0', 'BC:10:EF:9D:AE:F0' ]
     ];
 
     t.plan(strs.length);
