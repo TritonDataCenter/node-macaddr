@@ -1,11 +1,14 @@
 {
   "name": "macaddr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "MAC address parsing and manipulation",
-  "keywords": [ "mac", "macaddr" ],
+  "keywords": [
+    "mac",
+    "macaddr"
+  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/joyent/node-macaddr.git"
+    "url": "https://github.com/joyent/node-macaddr.git"
   },
   "main": "lib/macaddr.js",
   "dependencies": {
